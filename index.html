@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h2>Simple, traffic-based pricing</h2>
+        <h3>Sign-up for our 30-day trial. No credit card required.</h3>
+      </header>
+
+      <section class="plan-card">
+        <div class="plan-package">
+          <div class="plan-package-pack">
+            <h3>{{ pageViews }} Pageviews</h3>
+          </div>
+          <div class="plan-package-price">
+            <strong>${{ printPrice }}</strong>/ month
+          </div>
+          <div class="plan-package-slider">
+            <input
+              type="range"
+              min="1"
+              max="5"
+              value="3"
+              class="slider"
+              id="myRange"
+              v-model="package"
+              :class="sliderClass"
+            />
+          </div>
+        </div>
+        <div class="plan-billing">
+          <div>Monthly Billing</div>
+          <div>
+            <label class="switch">
+              <input type="checkbox" v-model="yearlyBilling" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div>
+            Yearly Billing
+            <div>-25%<span> discount</span></div>
+          </div>
+        </div>
+        <div class="plan-card-footer">
+          <ul class="plan-card-footer-benefits">
+            <li>Unlimited websites</li>
+            <li>100% data ownership</li>
+            <li>Email reports</li>
+          </ul>
+          <div class="plan-card-footer-action">
+            <a href="#" class="btn">Start my trial</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="attribution">
+      <div>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Timothy Morrell</a>.
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
